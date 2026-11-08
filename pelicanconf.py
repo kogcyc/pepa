@@ -1,0 +1,23 @@
+SITENAME = "PEPA"
+ORGANIZATION_NAME = "Prince Street Emergency Preparation Association"
+SITEURL = ""
+PATH = "content"
+OUTPUT_PATH = "output"
+RELATIVE_URLS = True
+TIMEZONE = "America/Los_Angeles"
+DEFAULT_LANG = "en"
+
+THEME = "theme"
+DIRECT_TEMPLATES = ["search"]
+PAGE_URL = "{slug}.html"
+PAGE_SAVE_AS = "{slug}.html"
+THEME_STATIC_PATHS = ["static"]
+PLUGIN_PATHS = ["plugins"]
+PLUGINS = ["search_index"]
+STATIC_PATHS = []
+FEED_ALL_ATOM = None
+CATEGORY_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
+TRANSLATION_FEED_ATOM = None
+DELETE_OUTPUT_DIRECTORY = False

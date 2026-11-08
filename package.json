@@ -1,0 +1,13 @@
+{
+  "name": "pepa-site",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/styles.css -o ./theme/static/styles.css --minify",
+    "watch:css": "tailwindcss -i ./src/styles.css -o ./theme/static/styles.css --watch",
+    "build": "npm run build:css && python -m pelican -s pelicanconf.py"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.0.0",
+    "tailwindcss": "^4.0.0"
+  }
+}

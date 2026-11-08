@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="{{ DEFAULT_LANG }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{{ SITENAME }} | {{ ORGANIZATION_NAME }}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-container">
+      <header class="site-header">
+        <a class="brand" href="{{ SITEURL }}/index.html"><span class="brand-symbol" aria-hidden="true">P<span>+</span></span><span><strong>{{ SITENAME }}</strong><span class="brand-name">{{ ORGANIZATION_NAME }}</span></span></a>
+        <nav class="site-nav" aria-label="Main navigation">
+          {% for slug, label in [("classes", "Classes"), ("documents", "Documents"), ("maps", "Maps"), ("search", "Search")] %}
+          <a {% if output_file == slug + ".html" %}aria-current="page"{% endif %} {% if slug == "search" %}class="nav-search"{% endif %} href="{{ SITEURL }}/{{ slug }}.html">{{ label }}{% if slug == "search" %}<span aria-hidden="true"> ↗</span>{% endif %}</a>
+          {% endfor %}
+        </nav>
+      </header>
+      <main id="main" class="site-main">
+        {% block content %}{% endblock %}
+      </main>
+      <footer class="site-footer">
+        <div><strong>{{ SITENAME }}</strong><p>Preparedness starts with community.</p></div>
+        <p>copyright 2026 · Prince Street</p>
+      </footer>
+    </div>
+    {% block scripts %}{% endblock %}
+  </body>
+</html>

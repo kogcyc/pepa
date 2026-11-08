@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Search | {{ SITENAME }}{% endblock %}
+{% block content %}
+  <div class="page-heading"><p class="eyebrow">Find what you need</p><h1>Search PEPA</h1><p>Classes, practical guides, and local emergency maps.</p></div>
+  <form id="search-form" class="mt-8 max-w-3xl" action="search.html" method="get" role="search">
+    <label class="mb-2 block" for="search-query">Search PEPA</label>
+    <div class="flex flex-wrap gap-3">
+      <input class="min-w-0 flex-1 rounded border border-slate-400 bg-white px-4 py-3" id="search-query" name="q" type="search" placeholder="Enter search words">
+      <button class="rounded bg-slate-900 px-5 py-3 text-white hover:bg-slate-700" type="submit">Search</button>
+    </div>
+  </form>
+  <p id="search-status" class="my-6 text-slate-600" role="status" aria-live="polite">Enter words to search the website.</p>
+  <ul id="search-results" class="max-w-3xl space-y-6"></ul>
+  <noscript><p>Enable JavaScript to search this website.</p></noscript>
+{% endblock %}
+{% block scripts %}
+  <script src="{{ SITEURL }}/search-index.js" defer></script>
+  <script src="{{ SITEURL }}/theme/search.js" defer></script>
+{% endblock %}
