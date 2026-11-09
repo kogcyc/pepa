@@ -2,7 +2,13 @@
 {% block title %}{{ page.title }} | {{ SITENAME }}{% endblock %}
 {% block content %}
   {% if page.slug == "index" %}
-    <section class="home-hero"><p class="eyebrow"><span aria-hidden="true"></span> Prince Street · Berkeley</p><h1>Prepared neighbors.<br><em>Stronger community.</em></h1></section>
+    <section class="home-hero">
+      <img class="home-hero-photo" src="{{ SITEURL }}/theme/images/prince.jpg" alt="Homes and leafy trees along Prince Street" width="1008" height="1344">
+      <div class="home-hero-copy">
+        <p class="eyebrow"><span aria-hidden="true"></span> Prince Street · Berkeley</p>
+        <h1>Prepared neighbors.<br><em>Stronger community.</em></h1>
+      </div>
+    </section>
     <div class="home-content">{{ page.content }}</div>
   {% else %}
     <div class="page-heading"><p class="eyebrow">Your community preparedness hub</p><h1>{{ page.title }}</h1></div>
